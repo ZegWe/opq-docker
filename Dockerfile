@@ -1,9 +1,9 @@
 FROM alpine:latest
 
-RUN apk update \
-	&& apk add curl tar
-RUN curl -O https://files.gitter.im/5f27939ed73408ce4feb3112/jYSr/OPQBot_6.0.12_linux_amd64.tar.gz
-RUN tar -xvf OPQBot_6.0.12_linux_amd64.tar.gz 
+RUN apk update && \
+	apk add curl tar && \
+	curl -O https://files.gitter.im/5f27939ed73408ce4feb3112/jYSr/OPQBot_6.0.12_linux_amd64.tar.gz && \
+	tar -xvf OPQBot_6.0.12_linux_amd64.tar.gz 
 
 FROM alpine:latest
 
