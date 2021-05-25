@@ -28,4 +28,4 @@ jobs:
         uses: docker/setup-buildx-action@v1.3.0
         with:
           install: true
-      - uses: echo ${{ steps.buildx.outputs.platforms }}
+      - uses: echo ${{ steps.build.outputs.platforms }}
