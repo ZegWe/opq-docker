@@ -7,6 +7,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   release:
     branches: [ main ]
+    types: released
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -55,5 +56,3 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm
           push: true
           tags: zegwe/opqbot:latest
-
-  
