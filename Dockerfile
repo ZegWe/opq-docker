@@ -1,14 +1,13 @@
 FROM alpine:latest
 
-RUN apk update && \
-	apk add curl tar && \
-	curl -O https://files.gitter.im/5f27939ed73408ce4feb3112/jYSr/OPQBot_6.0.12_linux_amd64.tar.gz && \
-	tar -xvf OPQBot_6.0.12_linux_amd64.tar.gz 
+ARG TARGETPLATFORM
+COPY getopq.sh .
+RUN sh getopq.sh $TARGETPLATFORM
 
 FROM alpine:latest
 
-COPY --from=0 /OPQBot_6.0.12_linux_amd64/ /home/OPQBot
-RUN apk update && apk add wget
+COPY --from=0 /OPQBot/ /home/OPQBot
+RUN apk add --no-cache wget
 WORKDIR /home/OPQBot
 COPY entrypoint.sh .
 CMD sh entrypoint.sh $GITTER_TOKEN
