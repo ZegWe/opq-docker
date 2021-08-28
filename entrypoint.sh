@@ -1,5 +1,5 @@
 #! /bin/bash
 
 token=$1
-sed -i "s/\"\"/\"${token}\"/g" CoreConf.conf
+sed -i "s/Token = \"\"/Token = \"${token}\"/g" CoreConf.conf
 ./OPQBot
