@@ -9,5 +9,5 @@ FROM alpine:latest
 COPY --from=0 /OPQBot/ /home/OPQBot
 RUN apk add --no-cache wget
 WORKDIR /home/OPQBot
-COPY entrypoint.sh .
-CMD sh /home/OPQBot/entrypoint.sh $GITTER_TOKEN
+COPY entrypoint.sh ./entrypoint/entrypoint.sh
+CMD sh /home/OPQBot/entrypoint/entrypoint.sh $GITTER_TOKEN
