@@ -10,4 +10,4 @@ COPY --from=0 /OPQBot/ /home/OPQBot
 RUN apk add --no-cache wget
 WORKDIR /home/OPQBot
 COPY entrypoint.sh .
-CMD cd /home/OPQBot && sh entrypoint.sh $GITTER_TOKEN
+CMD sh /home/OPQBot/entrypoint.sh $GITTER_TOKEN
